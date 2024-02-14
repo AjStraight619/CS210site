@@ -33,7 +33,7 @@ const getAssignmentById = async (id: string) => {
 export const dynamic = "force-dynamic";
 export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const { id } = params;
-  console.log(id);
+  console.log("Fetching assignment with id: ", id);
   const assignment = (await getAssignmentById(id)) as any;
   const pdfSrc = `data:application/pdf;base64,${assignment?.pdfBase64}`;
 
