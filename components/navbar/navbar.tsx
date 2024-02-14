@@ -1,5 +1,6 @@
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ModeToggle } from "../ui/mode-toggle";
 import SearchBar from "./search";
 
@@ -18,7 +19,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <SearchBar />
+          <Suspense>
+            <SearchBar />
+          </Suspense>
           <ModeToggle />
         </div>
       </div>
