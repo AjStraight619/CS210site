@@ -30,6 +30,7 @@ const getAssignmentById = async (id: string) => {
   return assignment;
 };
 
+export const dynamic = "force-dynamic";
 export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const { id } = params;
   console.log(id);
