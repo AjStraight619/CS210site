@@ -8,3 +8,8 @@ export type Worksheet = {
 export type Worksheets = {
   [key: string]: Worksheet[];
 };
+
+export type ModalHandle = {
+  openModal: () => void;
+  closeModal: () => void;
+};

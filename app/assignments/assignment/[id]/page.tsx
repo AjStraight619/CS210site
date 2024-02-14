@@ -31,6 +31,7 @@ const getAssignmentById = async (id: string) => {
 };
 
 export const dynamic = "force-dynamic";
+
 export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const { id } = params;
   console.log("Fetching assignment with id: ", id);
@@ -42,7 +43,26 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
       <div className="flex flex-col pt-10 items-center justify-center gap-4">
         <h1 className="text-2xl font-semibold">{assignment?.name}</h1>
         {assignment?.pdfBase64 && (
-          <Iframe src={pdfSrc} width="600" height="800" url=""></Iframe>
+          <div
+            style={{
+              maxWidth: "600px",
+              width: "100%",
+              aspectRatio: "3 / 4",
+              position: "relative",
+            }}
+          >
+            <Iframe
+              src={pdfSrc}
+              width="100%"
+              height="100%"
+              url=""
+              styles={{
+                border: "none",
+                borderRadius: "10px",
+                position: "absolute",
+              }}
+            />
+          </div>
         )}
       </div>
     </main>
