@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar/navbar";
 import { ThemeProvider } from "@/providers/next-theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +27,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Suspense>
+            <Navbar />
+          </Suspense>
           {children}
         </ThemeProvider>
       </body>
