@@ -1,5 +1,5 @@
+import { BackButton } from "@/components/ui/back-button";
 import { prisma } from "@/lib/prisma";
-import Iframe from "react-iframe";
 
 type AssignmentPageProps = {
   params: {
@@ -39,32 +39,23 @@ export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const pdfSrc = `data:application/pdf;base64,${assignment?.pdfBase64}`;
 
   return (
-    <main className="h-screen flex flex-col gap-4 items-center justify-center">
-      <div className="flex flex-col pt-10 items-center justify-center gap-4">
-        <h1 className="text-2xl font-semibold">{assignment?.name}</h1>
+    <>
+      <BackButton />
+      <main className="flex flex-col items-center justify-center px-4 py-8 w-full relative">
+        <h1 className="text-2xl font-semibold mb-8">{assignment?.name}</h1>
         {assignment?.pdfBase64 && (
-          <div
-            style={{
-              maxWidth: "600px",
-              width: "100%",
-              aspectRatio: "3 / 4",
-              position: "relative",
-            }}
-          >
-            <Iframe
-              src={pdfSrc}
-              width="100%"
-              height="100%"
-              url=""
-              styles={{
-                border: "none",
-                borderRadius: "10px",
-                position: "absolute",
-              }}
-            />
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="relative" style={{ paddingBottom: "75%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full shadow-xl rounded-lg overflow-hidden"
+                src={pdfSrc}
+                title="PDF Content"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         )}
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

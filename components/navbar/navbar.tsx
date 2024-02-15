@@ -2,9 +2,8 @@
 import { links } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Suspense } from "react";
 import { ModeToggle } from "../ui/mode-toggle";
-import SearchBar from "./search";
+import SearchModal from "./search-modal";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -24,9 +23,7 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <Suspense>
-            <SearchBar />
-          </Suspense>
+          <SearchModal />
           <ModeToggle />
         </div>
       </div>

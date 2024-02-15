@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 const InstructorInfo = () => {
   return (
     <section className="">
-      <Card className="flex flex-col gap-4 items-center justify-start p-4 rounded-lg shadow">
+      <Card className="flex flex-col gap-4 items-center justify-start p-4 rounded-lg shadow-lg dark:shadow-xl">
         <CardHeader>{instructorInfo.name}</CardHeader>
         <CardContent>
           <ul className="w-full">
