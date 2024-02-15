@@ -4,6 +4,13 @@ import { Separator } from "@/components/ui/separator";
 import { worksheets } from "@/lib/data";
 import Link from "next/link";
 
+/**
+ * Server-side component to list all assignments.
+ * It fetches data on each request, ensuring the latest data is always rendered.
+ * This component uses Server-Side Rendering (SSR) for dynamic content.
+ * @returns A JSX element representing the list of assignments.
+ */
+
 export default async function Assignments() {
   const assignments = await getAssignments();
   return (
