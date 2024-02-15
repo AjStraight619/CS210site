@@ -1,17 +1,17 @@
 /* eslint-disable react/display-name */
 "use client";
 import { Search } from "lucide-react";
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import SearchBar from "./search";
 
-const SearchModal = forwardRef((_props, ref) => {
-  const [isOpen, setIsOpen] = useState(false);
+const SearchModal = () => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <Dialog open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
+    <Dialog open={open} onOpenChange={() => setOpen(!open)}>
       <DialogTrigger asChild>
-        <div className="h-[2rem] w-[10rem] relative border border-primary-foreground rounded-md flex flex-row items-center justify-start gap-2 px-1 hover:cursor-pointer">
+        <div className="h-full w-[10rem] relative border rounded-md flex flex-row items-center justify-start gap-2 px-1 py-2 hover:cursor-text">
           <span>
             <Search className="text-primary/70" />
           </span>
@@ -20,10 +20,11 @@ const SearchModal = forwardRef((_props, ref) => {
       </DialogTrigger>
 
       <DialogContent className="flex flex-col gap-2 items-center justify-center w-full">
+        <div className="mt-2" />
         <SearchBar />
       </DialogContent>
     </Dialog>
   );
-});
+};
 
 export default SearchModal;

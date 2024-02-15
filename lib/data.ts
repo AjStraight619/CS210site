@@ -108,3 +108,38 @@ export const instructorInfo = {
   "Virtual Office": "Meeting ID 243-757-7255 (on Zoom)",
   Office: "GMCS 546 , T, TH 9:30 AM - 11:30 AM",
 };
+
+export const topics = [
+  {
+    name: "Java Basics & Generics",
+    href: "/topics/java-basics",
+  },
+  {
+    name: "Analysis of Algorithms",
+    href: "/topics/analysis-of-algorithms",
+  },
+  {
+    name: "Stacks, Queues, & Linked Lists",
+    href: "/topics/stacks-queues-and-linked-lists",
+  },
+  {
+    name: "Sorting Algorithms",
+    href: "/topics/sorting-algorithms",
+  },
+  {
+    name: "Priority Queues & Heaps",
+    href: "/topics/priority-queues-and-heaps",
+  },
+  {
+    name: "Trees",
+    href: "/topics/trees",
+  },
+  {
+    name: "Hashing",
+    href: "/topics/hashing",
+  },
+  {
+    name: "Graphs & Graph Algorithms",
+    href: "/topics/graphs-graph-algorithms",
+  },
+] as const;
