@@ -2,6 +2,10 @@ import { Worksheets } from "./types";
 
 export const links = [
   {
+    name: "Home",
+    href: "/",
+  },
+  {
     name: "Calculate Grade",
     href: "/calculator",
   },
